@@ -1,5 +1,6 @@
 package grupo8.altafidelidadipo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -48,5 +49,24 @@ public class Principal extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void goToRiego (View view){
+        Intent i = new Intent(Principal.this, Riego.class);
+        startActivity(i);
+    }
+
+    public void goToClimatizacion (View view){
+        Intent i = new Intent(Principal.this, Climatizacion.class);
+        startActivity(i);
+    }
+
+    public void goToVentanas (View view){
+        Intent i = new Intent(Principal.this, Ventanas.class);
+        startActivity(i);
+    }
+
+    public void goToIluminacion (View view){
+        Intent i = new Intent(Principal.this, Iluminacion.class);
+        startActivity(i);
     }
 }

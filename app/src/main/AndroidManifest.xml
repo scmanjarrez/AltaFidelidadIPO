@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -18,6 +18,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Riego"
+            android:label="@string/title_activity_riego"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Climatizacion"
+            android:label="@string/title_activity_climatizacion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Ventanas"
+            android:label="@string/title_activity_ventanas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Iluminacion"
+            android:label="@string/title_activity_iluminacion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Opciones"
+            android:label="@string/title_activity_opciones"></activity>
     </application>
 
 </manifest>
