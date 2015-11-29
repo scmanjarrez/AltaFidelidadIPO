@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class Principal extends AppCompatActivity {
 
@@ -24,8 +25,7 @@ public class Principal extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(Principal.this, "En construcción...", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -52,13 +52,13 @@ public class Principal extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void goToRiego (View view){
-        Intent i = new Intent(Principal.this, Zonas.class);
+        Intent i = new Intent(Principal.this, ZonasRiego.class);
         i.putExtra("comeFrom","Riego");
         startActivity(i);
     }
 
     public void goToClimatizacion (View view){
-        Intent i = new Intent(Principal.this, ZonasRiego.class);
+        Intent i = new Intent(Principal.this, Zonas.class);
         i.putExtra("comeFrom","Climatización");
         startActivity(i);
     }

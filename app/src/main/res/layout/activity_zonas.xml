@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="grupo8.altafidelidadipo.Zonas">
+    tools:context="grupo8.altafidelidadipo.Zonas"
+    android:layout_gravity="center">
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/zonas"
         android:textSize="30sp"
         android:id="@+id/tvZonas"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:gravity="center"/>
+
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ScrollZonas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tvZonas">
+        android:layout_marginTop="35dp">
+
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -32,51 +37,65 @@
                 android:text="@string/general"
                 android:id="@+id/btGeneral"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="50dp"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pasillo"
                 android:id="@+id/btPasillo"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="50dp"
+                android:onClick="goToLucesPasillo"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/salon"
                 android:id="@+id/btSalon"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="50dp"
+                android:onClick="goToLucesSalon"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cocina"
                 android:id="@+id/btCocina"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="50dp"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/habitacion"
                 android:id="@+id/btHabitacion"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="50dp"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/baño"
                 android:id="@+id/btBaño"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="50dp"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/jardin"
                 android:id="@+id/btJardin"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="50dp"/>
+
+
         </LinearLayout>
 
     </ScrollView>
 
-</RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_visiongeneral"
+        android:tint="@color/white"
+        app:backgroundTint="@color/colorFAB"/>
+
+</android.support.design.widget.CoordinatorLayout>

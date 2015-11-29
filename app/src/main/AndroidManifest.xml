@@ -14,7 +14,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -27,7 +26,8 @@
         <activity
             android:name=".ZonasRiego"
             android:label="@string/title_activity_zonas" />
-        <activity android:name=".Luces"></activity>
+        <activity android:name=".Luces"
+            android:label="@string/title_activity_luces" />
     </application>
 
 </manifest>

@@ -20,4 +20,5 @@
     <string name="zonas">Zonas</string>
     <string name="jLateral">J.Lateral</string>
     <string name="jTrasero">J.Trasero</string>
+    <string name="title_activity_luces">Luces</string>
 </resources>
