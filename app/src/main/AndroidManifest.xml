@@ -20,23 +20,14 @@
         </activity>
         <activity
             android:name=".Riego"
-            android:label="@string/title_activity_riego"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_riego" />
         <activity
-            android:name=".Climatizacion"
-            android:label="@string/title_activity_climatizacion"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".Zonas"
+            android:label="@string/title_activity_zonas" />
         <activity
-            android:name=".Ventanas"
-            android:label="@string/title_activity_ventanas"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Iluminacion"
-            android:label="@string/title_activity_iluminacion"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Opciones"
-            android:label="@string/title_activity_opciones"></activity>
+            android:name=".ZonasRiego"
+            android:label="@string/title_activity_zonas" />
+        <activity android:name=".Luces"></activity>
     </application>
 
 </manifest>

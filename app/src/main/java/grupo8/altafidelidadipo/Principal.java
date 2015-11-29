@@ -1,6 +1,7 @@
 package grupo8.altafidelidadipo;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -51,22 +52,27 @@ public class Principal extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void goToRiego (View view){
-        Intent i = new Intent(Principal.this, Riego.class);
+        Intent i = new Intent(Principal.this, Zonas.class);
+        i.putExtra("comeFrom","Riego");
         startActivity(i);
     }
 
     public void goToClimatizacion (View view){
-        Intent i = new Intent(Principal.this, Climatizacion.class);
+        Intent i = new Intent(Principal.this, ZonasRiego.class);
+        i.putExtra("comeFrom","Climatización");
         startActivity(i);
     }
 
     public void goToVentanas (View view){
-        Intent i = new Intent(Principal.this, Ventanas.class);
+        Intent i = new Intent(Principal.this, Zonas.class);
+        i.putExtra("comeFrom","Ventanas");
         startActivity(i);
     }
 
     public void goToIluminacion (View view){
-        Intent i = new Intent(Principal.this, Iluminacion.class);
+        Intent i = new Intent(Principal.this, Zonas.class);
+        i.putExtra("comeFrom","Iluminación");
         startActivity(i);
     }
+
 }

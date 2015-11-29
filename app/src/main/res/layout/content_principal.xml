@@ -18,19 +18,18 @@
         android:layout_height="200dp"
         android:id="@+id/btRiego"
         android:src="@drawable/regadera"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:scaleType="fitCenter"
-        android:onClick="goToRiego" />
+        android:layout_alignParentStart="true"
+        android:onClick="goToRiego"/>
 
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="200dp"
         android:id="@+id/btTermostato"
         android:src="@drawable/termostato"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:scaleType="fitCenter"
-        android:onClick="goToClimatizacion" />
+        android:onClick="goToClimatizacion"/>
 
     <ImageButton
         android:layout_width="150dp"
@@ -38,9 +37,9 @@
         android:id="@+id/btVentilacion"
         android:src="@drawable/ventilacion"
         android:layout_below="@id/btRiego"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:scaleType="fitCenter"
-        android:onClick="goToVentanas" />
+        android:onClick="goToVentanas"/>
 
     <ImageButton
         android:layout_width="150dp"
@@ -48,7 +47,7 @@
         android:id="@+id/btIluminacion"
         android:src="@drawable/bombilla"
         android:layout_below="@id/btTermostato"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:scaleType="fitCenter"
-        android:onClick="goToIluminacion" />
+        android:onClick="goToIluminacion"/>
 </RelativeLayout>
