@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:icon="@drawable/icono_app"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -14,20 +14,24 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Riego"
+            android:name=".RiegoTrasero"
             android:label="@string/title_activity_riego" />
         <activity
-            android:name=".Zonas"
+            android:name=".ZonasIluminacion"
             android:label="@string/title_activity_zonas" />
         <activity
             android:name=".ZonasRiego"
             android:label="@string/title_activity_zonas" />
-        <activity android:name=".Luces"
+        <activity
+            android:name=".IluminacionSalon"
             android:label="@string/title_activity_luces" />
+        <activity android:name=".ZonasClimatizacion" />
+        <activity android:name=".ZonasVentanas"></activity>
     </application>
 
 </manifest>

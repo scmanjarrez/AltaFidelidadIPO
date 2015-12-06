@@ -9,7 +9,7 @@
     <string name="title_activity_opciones">activity_opciones</string>
     <string name="title_activity_zonas">Zonas</string>
 
-    <!--Strings que salen en el activity Zonas-->
+    <!--Strings que salen en el activity ZonasIluminacion-->
     <string name="general">General</string>
     <string name="salon">Salón</string>
     <string name="pasillo">Pasillo</string>

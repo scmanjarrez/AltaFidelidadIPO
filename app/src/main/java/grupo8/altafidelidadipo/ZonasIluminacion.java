@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
-public class Zonas extends AppCompatActivity {
+public class ZonasIluminacion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zonas);
+        setContentView(R.layout.activity_zonas_iluminacion);
         Bundle bundle = getIntent().getExtras();
         String nombre=bundle.getString("comeFrom");
         getSupportActionBar().setTitle(nombre);
@@ -22,7 +22,7 @@ public class Zonas extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Zonas.this, "En construcción...", Toast.LENGTH_LONG).show();
+                Toast.makeText(ZonasIluminacion.this, "En construcción...", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -35,12 +35,12 @@ public class Zonas extends AppCompatActivity {
     }
 
     public void goToLucesPasillo (View view){
-        Intent i = new Intent(Zonas.this, Luces.class);
+        Intent i = new Intent(ZonasIluminacion.this, IluminacionSalon.class);
         i.putExtra("zona","Pasillo");
         startActivity(i);
     }
     public void goToLucesSalon (View view){
-        Intent i = new Intent(Zonas.this, Luces.class);
+        Intent i = new Intent(ZonasIluminacion.this, IluminacionSalon.class);
         i.putExtra("zona","Salón");
         startActivity(i);
     }

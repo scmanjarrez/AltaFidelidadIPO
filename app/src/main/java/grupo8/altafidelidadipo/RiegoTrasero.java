@@ -8,18 +8,18 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
-public class Riego extends AppCompatActivity {
+public class RiegoTrasero extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_riego);
+        setContentView(R.layout.activity_riego_trasero);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Riego.this, "En construcción...", Toast.LENGTH_LONG).show();
+                Toast.makeText(RiegoTrasero.this, "En construcción...", Toast.LENGTH_LONG).show();
             }
         });
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -43,8 +43,7 @@ public class Riego extends AppCompatActivity {
     }
 
     public void goToZonas (View view){
-        Intent i = new Intent(Riego.this, Zonas.class);
-        i.putExtra("vengoDe",Riego.class.getSimpleName());
+        Intent i = new Intent(RiegoTrasero.this, ZonasIluminacion.class);
         startActivity(i);
     }
 }
