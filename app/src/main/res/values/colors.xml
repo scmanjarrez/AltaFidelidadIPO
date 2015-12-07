@@ -6,4 +6,5 @@
     <color name="fondoBotones">#fd9b2a</color>
     <color name="white">#FFFFFF</color>
     <color name="colorFAB">#7689f5</color>
+    <color name="black">#A6000000</color>
 </resources>

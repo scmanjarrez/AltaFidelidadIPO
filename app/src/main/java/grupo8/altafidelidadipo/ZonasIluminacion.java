@@ -14,9 +14,6 @@ public class ZonasIluminacion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zonas_iluminacion);
-        Bundle bundle = getIntent().getExtras();
-        String nombre=bundle.getString("comeFrom");
-        getSupportActionBar().setTitle(nombre);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -36,12 +33,6 @@ public class ZonasIluminacion extends AppCompatActivity {
 
     public void goToLucesPasillo (View view){
         Intent i = new Intent(ZonasIluminacion.this, IluminacionSalon.class);
-        i.putExtra("zona","Pasillo");
-        startActivity(i);
-    }
-    public void goToLucesSalon (View view){
-        Intent i = new Intent(ZonasIluminacion.this, IluminacionSalon.class);
-        i.putExtra("zona","Salón");
         startActivity(i);
     }
 }

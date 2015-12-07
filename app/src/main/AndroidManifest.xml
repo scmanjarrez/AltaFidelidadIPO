@@ -19,19 +19,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RiegoTrasero"
-            android:label="@string/title_activity_riego" />
+            android:name=".ZonasRiego"
+            android:label="@string/title_activity_zonas_riego" />
+        <activity
+            android:name=".ZonasClimatizacion"
+            android:label="@string/title_activity_zonas_climatizacion" />
+        <activity
+            android:name=".ZonasVentanas"
+            android:label="@string/title_activity_zonas_ventanas" />
         <activity
             android:name=".ZonasIluminacion"
-            android:label="@string/title_activity_zonas" />
-        <activity
-            android:name=".ZonasRiego"
-            android:label="@string/title_activity_zonas" />
-        <activity
-            android:name=".IluminacionSalon"
-            android:label="@string/title_activity_luces" />
-        <activity android:name=".ZonasClimatizacion" />
-        <activity android:name=".ZonasVentanas"></activity>
+            android:label="@string/title_activity_zonas_iluminacion" />
+        <activity android:name=".RiegoTrasero"
+            android:label="@string/title_activity_zonas_climatizacion" />
+        <activity android:name=".IluminacionSalon"
+            android:label="@string/salon" />
     </application>
 
 </manifest>

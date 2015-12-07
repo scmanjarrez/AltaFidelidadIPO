@@ -1,13 +1,15 @@
 <resources>
     <!--Strings relacionados con el nombre de la aplicación y las activities-->
     <string name="app_name">Domot 8</string>
-    <string name="action_settings">Opciones</string>
     <string name="title_activity_riego">Riego</string>
     <string name="title_activity_climatizacion">Climatizacion</string>
     <string name="title_activity_ventanas">Ventanas</string>
     <string name="title_activity_iluminacion">Iluminacion</string>
-    <string name="title_activity_opciones">activity_opciones</string>
-    <string name="title_activity_zonas">Zonas</string>
+    <string name="title_activity_opciones">Opciones</string>
+    <string name="title_activity_zonas_riego">Riego - Zonas</string>
+    <string name="title_activity_zonas_climatizacion">Climatización - Zonas</string>
+    <string name="title_activity_zonas_ventanas">Ventanas - Zonas</string>
+    <string name="title_activity_zonas_iluminacion">Iluminación - Zonas</string>
 
     <!--Strings que salen en el activity ZonasIluminacion-->
     <string name="general">General</string>
@@ -20,5 +22,5 @@
     <string name="zonas">Zonas</string>
     <string name="jLateral">J.Lateral</string>
     <string name="jTrasero">J.Trasero</string>
-    <string name="title_activity_luces">Luces</string>
+    <string name="title_activity_acercade">Acerca De</string>
 </resources>
