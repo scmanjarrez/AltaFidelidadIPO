@@ -38,7 +38,7 @@ public class ZonasClimatizacion extends AppCompatActivity {
         datos.add(new EntidadZonas(R.drawable.icono_zona_salon, getString(R.string.salon)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_cocina, getString(R.string.cocina)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_habitacion, getString(R.string.habitacion)));
-        datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.baño)));
+        datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.bano)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_garaje, getString(R.string.garaje)));
 
 

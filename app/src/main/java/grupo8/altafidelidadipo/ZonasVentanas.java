@@ -13,10 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.PopupMenu.OnMenuItemClickListener;
 
 import java.util.ArrayList;
 
@@ -41,7 +39,7 @@ public class ZonasVentanas extends AppCompatActivity {
         datos.add(new EntidadZonas(R.drawable.icono_zona_salon, getString(R.string.salon)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_cocina, getString(R.string.cocina)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_habitacion, getString(R.string.habitacion)));
-        datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.baño)));
+        datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.bano)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_garaje, getString(R.string.garaje)));
 
 

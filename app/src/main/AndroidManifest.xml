@@ -40,9 +40,31 @@
         <activity
             android:name=".IluminacionPasillo"
             android:label="@string/pasillo" />
+
+        <activity
+            android:name=".IluminacionSalon"
+            android:label="@string/salon" />
+
         <activity
             android:name=".IluminacionCocina"
             android:label="@string/cocina" />
+
+        <activity
+            android:name=".IluminacionHabitacion"
+            android:label="@string/habitacion" />
+
+        <activity
+            android:name=".IluminacionBano"
+            android:label="@string/bano" />
+
+        <activity
+            android:name=".IluminacionGaraje"
+            android:label="@string/garaje" />
+
+        <activity
+            android:name=".IluminacionJardin"
+            android:label="@string/jardin" />
+
     </application>
 
 </manifest>

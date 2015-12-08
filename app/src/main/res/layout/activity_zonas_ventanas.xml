@@ -49,5 +49,5 @@
         android:tint="@color/white"
         app:backgroundTint="@color/colorFAB"
         app:layout_behavior="grupo8.altafidelidadipo.ScrollAwareFABBehavior" />
-    <!--"-->
+
 </android.support.design.widget.CoordinatorLayout>

@@ -13,10 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.PopupMenu.OnMenuItemClickListener;
 
 import java.util.ArrayList;
 
@@ -41,7 +39,7 @@ public class ZonasIluminacion extends AppCompatActivity {
         datos.add(new EntidadZonas(R.drawable.icono_zona_salon, getString(R.string.salon)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_cocina, getString(R.string.cocina)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_habitacion, getString(R.string.habitacion)));
-        datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.baño)));
+        datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.bano)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_garaje, getString(R.string.garaje)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_jardin, getString(R.string.jardin)));
 
@@ -73,6 +71,36 @@ public class ZonasIluminacion extends AppCompatActivity {
                                 Intent i = new Intent(ZonasIluminacion.this, IluminacionPasillo.class);
                                 i.putExtra("position", spinner.getSelectedItemPosition());
                                 startActivity(i);
+                                break;
+                            case 2:
+                                Intent j = new Intent(ZonasIluminacion.this, IluminacionSalon.class);
+                                j.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(j);
+                                break;
+                            case 3:
+                                Intent k = new Intent(ZonasIluminacion.this, IluminacionCocina.class);
+                                k.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(k);
+                                break;
+                            case 4:
+                                Intent l = new Intent(ZonasIluminacion.this, IluminacionHabitacion.class);
+                                l.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(l);
+                                break;
+                            case 5:
+                                Intent m = new Intent(ZonasIluminacion.this, IluminacionBano.class);
+                                m.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(m);
+                                break;
+                            case 6:
+                                Intent n = new Intent(ZonasIluminacion.this, IluminacionGaraje.class);
+                                n.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(n);
+                                break;
+                            case 7:
+                                Intent o = new Intent(ZonasIluminacion.this, IluminacionJardin.class);
+                                o.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(o);
                                 break;
                         }
                     }
