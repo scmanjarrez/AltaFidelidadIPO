@@ -6,33 +6,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="grupo8.altafidelidadipo.ZonasVentanas">
+    tools:context="grupo8.altafidelidadipo.IluminacionPasillo">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarVentanas"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary">
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarIluminacionPasillo"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/iconoHomeToolbarVentanas"
-            android:src="@drawable/ic_home"
-            android:tint="@color/white"
-            android:layout_marginStart="108dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iconoHomeToolbarIluminacionPasillo"
+                android:src="@drawable/ic_home"
+                android:tint="@color/white"
+                android:layout_marginStart="130dp"/>
 
-        <Spinner
-            android:id="@+id/spinnerVentanas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"/>
-    </android.support.v7.widget.Toolbar>
+            <Spinner
+                android:id="@+id/spinnerIluminacionPasillo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/recicladorVentanas"
+        android:id="@+id/recicladorIluminacionPasillo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="3dp"
@@ -40,7 +44,7 @@
         android:layout_marginTop="?attr/actionBarSize"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabZonasVentanas"
+        android:id="@+id/fabIluminacionPasillo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -49,5 +53,5 @@
         android:tint="@color/white"
         app:backgroundTint="@color/colorFAB"
         app:layout_behavior="grupo8.altafidelidadipo.ScrollAwareFABBehavior" />
-    <!--"-->
+
 </android.support.design.widget.CoordinatorLayout>

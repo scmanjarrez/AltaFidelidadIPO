@@ -7,33 +7,42 @@
         android:icon="@drawable/icono_app"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".Principal"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ZonasRiego"
-            android:label="@string/title_activity_zonas_riego" />
+            android:label="@string/title_activity_riego" />
+
         <activity
             android:name=".ZonasClimatizacion"
-            android:label="@string/title_activity_zonas_climatizacion" />
+            android:label="@string/title_activity_climatizacion" />
+
         <activity
             android:name=".ZonasVentanas"
-            android:label="@string/title_activity_zonas_ventanas" />
+            android:label="@string/title_activity_ventanas" />
+
         <activity
             android:name=".ZonasIluminacion"
-            android:label="@string/title_activity_zonas_iluminacion" />
-        <activity android:name=".RiegoTrasero"
-            android:label="@string/title_activity_zonas_climatizacion" />
-        <activity android:name=".IluminacionSalon"
-            android:label="@string/salon" />
+            android:label="@string/title_activity_iluminacion" />
+
+        <activity
+            android:name=".RiegoTrasero"
+            android:label="@string/jTrasero" />
+
+        <activity
+            android:name=".IluminacionPasillo"
+            android:label="@string/pasillo" />
+        <activity
+            android:name=".IluminacionCocina"
+            android:label="@string/cocina" />
     </application>
 
 </manifest>

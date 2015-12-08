@@ -10,22 +10,85 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarPrincipal"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:background="?attr/colorPrimary">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iconoHomeToolbarPrincipal"
+                android:src="@drawable/ic_home"
+                android:tint="@color/white"
+                android:layout_marginStart="115dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerPrincipal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_principal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="55dp"
+            android:id="@+id/btRiego"
+            android:src="@drawable/icono_riego"
+            android:scaleType="fitCenter"
+            android:layout_alignParentStart="true"
+            android:onClick="goToRiego"/>
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="55dp"
+            android:id="@+id/btClimatizacion"
+            android:src="@drawable/icono_climatizacion"
+            android:layout_alignParentEnd="true"
+            android:scaleType="fitCenter"
+            android:onClick="goToClimatizacion"/>
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:id="@+id/btVentanas"
+            android:src="@drawable/icono_ventanas"
+            android:layout_below="@id/btRiego"
+            android:layout_alignParentStart="true"
+            android:scaleType="fitCenter"
+            android:onClick="goToVentanas"/>
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:id="@+id/btIluminacion"
+            android:src="@drawable/icono_iluminacion"
+            android:layout_below="@id/btClimatizacion"
+            android:layout_alignParentEnd="true"
+            android:scaleType="fitCenter"
+            android:onClick="goToIluminacion"/>
+
+    </RelativeLayout>
+
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fabPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

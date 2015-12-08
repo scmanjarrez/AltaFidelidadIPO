@@ -1,17 +1,18 @@
 <resources>
-    <!--Strings relacionados con el nombre de la aplicación y las activities-->
+    <!--Strings relacionados con la aplicación como tal-->
     <string name="app_name">Domot 8</string>
+
+    <!--Strings de la pantalla principal-->
     <string name="title_activity_riego">Riego</string>
     <string name="title_activity_climatizacion">Climatizacion</string>
     <string name="title_activity_ventanas">Ventanas</string>
     <string name="title_activity_iluminacion">Iluminacion</string>
-    <string name="title_activity_opciones">Opciones</string>
+
+    <!--Strings de las zonas-->
     <string name="title_activity_zonas_riego">Riego - Zonas</string>
     <string name="title_activity_zonas_climatizacion">Climatización - Zonas</string>
     <string name="title_activity_zonas_ventanas">Ventanas - Zonas</string>
     <string name="title_activity_zonas_iluminacion">Iluminación - Zonas</string>
-
-    <!--Strings que salen en el activity ZonasIluminacion-->
     <string name="general">General</string>
     <string name="salon">Salón</string>
     <string name="pasillo">Pasillo</string>
@@ -19,8 +20,25 @@
     <string name="habitacion">Habitación</string>
     <string name="baño">Baño</string>
     <string name="jardin">Jardín</string>
+    <string name="garaje">Garaje</string>
     <string name="zonas">Zonas</string>
-    <string name="jLateral">J.Lateral</string>
-    <string name="jTrasero">J.Trasero</string>
+    <string name="jLateral">Jardín Lateral</string>
+    <string name="jTrasero">Jardín Trasero</string>
+
+    <!--Strings de los menús-->
+    <string name="title_activity_opciones">Opciones</string>
     <string name="title_activity_acercade">Acerca De</string>
+
+    <!--Strings de los menús flotantes-->
+    <string name="general_riego_on">Conectar todos los riegos</string>
+    <string name="general_riego_off">Desconectar todos los riegos</string>
+    <string name="general_climatizacion_on">Activar todos los termostatos</string>
+    <string name="general_climatizacion_off">Desactivar todos los termostatos</string>
+    <string name="general_ventanas_on">Abrir todas las ventanas</string>
+    <string name="general_ventanas_off">Cerrar todas las ventanas</string>
+    <string name="general_persianas_on">Subir todas las persianas</string>
+    <string name="general_persianas_off">Bajar todas las persianas</string>
+    <string name="general_iluminacion_on">Encender todas las luces</string>
+    <string name="general_iluminacion_off">Apagar todas las luces</string>
+
 </resources>

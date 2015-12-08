@@ -6,13 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="grupo8.altafidelidadipo.Principal">
+    tools:context="grupo8.altafidelidadipo.ZonasClimatizacion">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarClimatizacion"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iconoHomeToolbarClimatizacion"
+                android:src="@drawable/ic_home"
+                android:tint="@color/white"
+                android:layout_marginStart="69dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerClimatizacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/recicladorClimatizacion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
         android:padding="3dp"
         android:scrollbars="vertical" />
 
@@ -25,6 +54,6 @@
         android:src="@drawable/ic_visiongeneral"
         android:tint="@color/white"
         app:backgroundTint="@color/colorFAB"
-        app:layout_behavior="grupo8.altafidelidadipo.ScrollAwareFABBehavior"/>
+        app:layout_behavior="grupo8.altafidelidadipo.ScrollAwareFABBehavior" />
 <!--"-->
 </android.support.design.widget.CoordinatorLayout>
