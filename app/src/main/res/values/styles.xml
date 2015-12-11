@@ -1,16 +1,12 @@
 <resources>
 
-    <style name="AppTheme" parent="Base.Theme.AppCompat.Light">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item><!--Color de fondo de la AppBar-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item><!--Color de fondo de la statusBar - reloj, batería..-->
         <item name="colorAccent">@color/colorAccent</item><!--Colores de los FAB y tal-->
         <item name="android:textColorPrimary">@color/white</item><!--Color del titulo de la AppBar-->
         <item name="android:textColorSecondary">@color/white</item><!--Color del overflow button-->
         <item name="android:textColor">@color/black</item> <!--Color del texto del menu overflow-->
-    </style>
-    <style name="AppTheme.NoActionBar">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
     </style>
 
 </resources>

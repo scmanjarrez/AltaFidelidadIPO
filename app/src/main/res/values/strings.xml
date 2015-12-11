@@ -4,15 +4,11 @@
 
     <!--Strings de la pantalla principal-->
     <string name="title_activity_riego">Riego</string>
-    <string name="title_activity_climatizacion">Climatizacion</string>
+    <string name="title_activity_climatizacion">Climatización</string>
     <string name="title_activity_ventanas">Ventanas</string>
-    <string name="title_activity_iluminacion">Iluminacion</string>
+    <string name="title_activity_iluminacion">Iluminación</string>
 
     <!--Strings de las zonas-->
-    <string name="title_activity_zonas_riego">Riego - Zonas</string>
-    <string name="title_activity_zonas_climatizacion">Climatización - Zonas</string>
-    <string name="title_activity_zonas_ventanas">Ventanas - Zonas</string>
-    <string name="title_activity_zonas_iluminacion">Iluminación - Zonas</string>
     <string name="general">General</string>
     <string name="salon">Salón</string>
     <string name="pasillo">Pasillo</string>

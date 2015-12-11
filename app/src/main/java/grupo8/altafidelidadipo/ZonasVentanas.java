@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class ZonasVentanas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zonas_ventanas);
+        setContentView(R.layout.activity_recycler_view);
 
         Bundle bundle = getIntent().getExtras();
         int position = bundle.getInt("position");
@@ -43,7 +44,7 @@ public class ZonasVentanas extends AppCompatActivity {
         datos.add(new EntidadZonas(R.drawable.icono_zona_garaje, getString(R.string.garaje)));
 
 
-        reciclador = (RecyclerView) findViewById(R.id.recicladorVentanas);
+        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerView);
         lmanager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         reciclador.setLayoutManager(lmanager);
 
@@ -51,7 +52,7 @@ public class ZonasVentanas extends AppCompatActivity {
         adaptador = new ZonasAdaptador(datos);
         reciclador.setAdapter(adaptador);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabZonasVentanas);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerView);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,10 +72,13 @@ public class ZonasVentanas extends AppCompatActivity {
                 })
         );
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarVentanas);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerView);
         setSupportActionBar(toolbar);
 
-        spinner = (Spinner) findViewById(R.id.spinnerVentanas);
+        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerView);
+        titulo.setText(R.string.title_activity_ventanas);
+
+        spinner = (Spinner) findViewById(R.id.spinnerRecyclerView);
 
         ArrayList<String> casas = new ArrayList<>();
         casas.add("Sierra");

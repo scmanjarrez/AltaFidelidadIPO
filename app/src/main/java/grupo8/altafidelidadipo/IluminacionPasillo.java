@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,12 +27,12 @@ public class IluminacionPasillo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_iluminacion_pasillo);
+        setContentView(R.layout.activity_recycler_view);
 
         Bundle bundle = getIntent().getExtras();
         int position = bundle.getInt("position");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabIluminacionPasillo);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerView);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +45,7 @@ public class IluminacionPasillo extends AppCompatActivity {
         ArrayList<EntidadLuces> datos = new ArrayList<EntidadLuces>();
         datos.add(new EntidadLuces("Luz 1","swPasillo1", estado.isSwPasillo1()));
 
-        reciclador = (RecyclerView) findViewById(R.id.recicladorIluminacionPasillo);
+        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerView);
         lmanager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         reciclador.setLayoutManager(lmanager);
         reciclador.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
@@ -52,10 +53,13 @@ public class IluminacionPasillo extends AppCompatActivity {
         adaptador = new LucesAdaptador(datos);
         reciclador.setAdapter(adaptador);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarIluminacionPasillo);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerView);
         setSupportActionBar(toolbar);
 
-        spinner = (Spinner) findViewById(R.id.spinnerIluminacionPasillo);
+        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerView);
+        titulo.setText(R.string.pasillo);
+
+        spinner = (Spinner) findViewById(R.id.spinnerRecyclerView);
 
         ArrayList<String> casas = new ArrayList<>();
         casas.add("Sierra");

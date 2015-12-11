@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class ZonasIluminacion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zonas_iluminacion);
+        setContentView(R.layout.activity_recycler_view);
 
         Bundle bundle = getIntent().getExtras();
         int position = bundle.getInt("position");
@@ -44,7 +45,7 @@ public class ZonasIluminacion extends AppCompatActivity {
         datos.add(new EntidadZonas(R.drawable.icono_zona_jardin, getString(R.string.jardin)));
 
 
-        reciclador = (RecyclerView) findViewById(R.id.recicladorIluminacion);
+        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerView);
         lmanager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         reciclador.setLayoutManager(lmanager);
 
@@ -52,7 +53,7 @@ public class ZonasIluminacion extends AppCompatActivity {
         adaptador = new ZonasAdaptador(datos);
         reciclador.setAdapter(adaptador);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabZonasIluminacion);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerView);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,10 +108,13 @@ public class ZonasIluminacion extends AppCompatActivity {
                 })
         );
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarIluminacion);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerView);
         setSupportActionBar(toolbar);
 
-        spinner = (Spinner) findViewById(R.id.spinnerIluminacion);
+        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerView);
+        titulo.setText(R.string.title_activity_iluminacion);
+
+        spinner = (Spinner) findViewById(R.id.spinnerRecyclerView);
 
         ArrayList<String> casas = new ArrayList<>();
         casas.add("Sierra");

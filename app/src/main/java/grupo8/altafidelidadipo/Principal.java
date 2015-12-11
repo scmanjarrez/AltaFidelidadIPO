@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,6 +37,8 @@ public class Principal extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarPrincipal);
         setSupportActionBar(toolbar);
+        TextView titulo = (TextView) findViewById(R.id.titulo);
+        titulo.setText(R.string.app_name);
 
         spinner = (Spinner) findViewById(R.id.spinnerPrincipal);
 
