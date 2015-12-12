@@ -37,10 +37,8 @@ public class ZonasClimatizacion extends AppCompatActivity {
         datos.add(new EntidadZonas(R.drawable.icono_zonas_general, getString(R.string.general)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_pasillo, getString(R.string.pasillo)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_salon, getString(R.string.salon)));
-        datos.add(new EntidadZonas(R.drawable.icono_zona_cocina, getString(R.string.cocina)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_habitacion, getString(R.string.habitacion)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.bano)));
-        datos.add(new EntidadZonas(R.drawable.icono_zona_garaje, getString(R.string.garaje)));
 
 
         reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerView);
@@ -66,6 +64,26 @@ public class ZonasClimatizacion extends AppCompatActivity {
                             case 0:
                                 opcGenerales(view);
                                 break;
+                            case 1:
+                                Intent i = new Intent(ZonasClimatizacion.this, ClimatizacionPasillo.class);
+                                i.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(i);
+                                break;
+                            case 2:
+                                Intent j = new Intent(ZonasClimatizacion.this, ClimatizacionSalon.class);
+                                j.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(j);
+                                break;
+                            case 3:
+                                Intent k = new Intent(ZonasClimatizacion.this, ClimatizacionHabitacion.class);
+                                k.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(k);
+                                break;
+                            case 4:
+                                Intent l = new Intent(ZonasClimatizacion.this, ClimatizacionBano.class);
+                                l.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(l);
+                                break;
                         }
                     }
                 })
@@ -87,6 +105,9 @@ public class ZonasClimatizacion extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(ZonasClimatizacion.this, R.layout.spinner_item, casas);
         spinner.setAdapter(adapter);
         spinner.setSelection(position);
+        if(getIntent().hasExtra("newPosition")){
+            spinner.setSelection(getIntent().getExtras().getInt("newPosition"));
+        }
 
     }
 
@@ -118,9 +139,13 @@ public class ZonasClimatizacion extends AppCompatActivity {
     }
     public void functionOn(int id) {
         Toast.makeText(this, "Se han activado todos los termostatos", Toast.LENGTH_SHORT).show();
+        VariablesGlobales g = VariablesGlobales.getInstance();
+        g.activarTermostatos();
     }
     public void functionOff(int id) {
         Toast.makeText(this, "Se han desactivado todos los termostatos", Toast.LENGTH_SHORT).show();
+        VariablesGlobales g = VariablesGlobales.getInstance();
+        g.desactivarTermostatos();
     }
 
     public void opcGenerales(View v) {

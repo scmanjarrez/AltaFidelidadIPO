@@ -1,9 +1,39 @@
-<resources>>
+<resources>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <!--
+        <style name="AppTheme.NoActionBar">
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+            <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+            <item name="android:statusBarColor">@android:color/transparent</item>
+            <item name="android:timePickerDialogTheme">@style/DialogTheme</item>
+        </style>
+    -->
+    <!--
+        <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+            <item name="colorAccent">@color/colorPrimary</item>
+        </style>-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item><!--Color de fondo de la AppBar-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item><!--Color de fondo de la statusBar - reloj, batería..-->
+        <item name="colorAccent">@color/colorAccent</item><!--Colores de los FAB y tal-->
+        <item name="android:textColorPrimary">@color/white</item><!--Color del titulo de la AppBar-->
+        <item name="android:textColorSecondary">@color/white</item><!--Color del overflow button-->
+        <item name="android:textColor">@color/black</item> <!--Color del texto del menu overflow-->
+        <item name="android:timePickerDialogTheme">@style/DialogTheme</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="checkbox">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <style name="edittext">
+        <item name="colorAccent">@color/colorPrimary</item>
     </style>
 </resources>

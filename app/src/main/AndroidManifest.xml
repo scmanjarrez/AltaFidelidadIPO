@@ -61,6 +61,26 @@
             android:name=".IluminacionJardin"
             android:label="@string/jardin" />
 
+        <activity
+            android:name=".ClimatizacionPasillo"
+            android:label="@string/pasillo" />
+
+        <activity
+            android:name=".ClimatizacionSalon"
+            android:label="@string/salon" />
+        <activity
+            android:name=".ClimatizacionHabitacion"
+            android:label="@string/habitacion" />
+        <activity
+            android:name=".ClimatizacionBano"
+            android:label="@string/bano" />
+
+        <activity
+            android:name=".RiegoJTrasero"
+            android:label="@string/jTrasero" />
+        <activity
+            android:name=".RiegoJLateral"
+            android:label="@string/jLateral" />
     </application>
 
 </manifest>

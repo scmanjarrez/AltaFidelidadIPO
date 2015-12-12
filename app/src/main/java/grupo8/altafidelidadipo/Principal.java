@@ -133,12 +133,20 @@ public class Principal extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getTitle().equals(getString(R.string.general_riego_on))) {
             Toast.makeText(this, "Se han conectado todos los riegos", Toast.LENGTH_SHORT).show();
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.conectarRiegos();
         }else if (item.getTitle().equals(getString(R.string.general_riego_off))) {
             Toast.makeText(this, "Se han desconectado todos los riegos", Toast.LENGTH_SHORT).show();
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.desconectarRiegos();
         }else if (item.getTitle().equals(getString(R.string.general_climatizacion_on))) {
             Toast.makeText(this, "Se han activado todos los termostatos", Toast.LENGTH_SHORT).show();
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.activarTermostatos();
         }else if (item.getTitle().equals(getString(R.string.general_climatizacion_off))) {
             Toast.makeText(this, "Se han desactivado todos los termostatos", Toast.LENGTH_SHORT).show();
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.desactivarTermostatos();
         }else if (item.getTitle().equals(getString(R.string.general_ventanas_on))) {
             Toast.makeText(this, "Se han abierto todas las ventanas", Toast.LENGTH_SHORT).show();
         }else if (item.getTitle().equals(getString(R.string.general_ventanas_off))) {

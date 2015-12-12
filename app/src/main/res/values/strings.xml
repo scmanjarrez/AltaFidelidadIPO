@@ -37,4 +37,9 @@
     <string name="general_iluminacion_on">Encender todas las luces</string>
     <string name="general_iluminacion_off">Apagar todas las luces</string>
 
+    <!--Strings de la climatización-->
+    <string name="temp_obj">Temperatura Deseada</string>
+    <string name="temp_act">Temperatura Actual</string>
+
+
 </resources>
