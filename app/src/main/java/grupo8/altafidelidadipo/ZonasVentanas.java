@@ -67,6 +67,10 @@ public class ZonasVentanas extends AppCompatActivity {
                             case 0:
                                 opcGenerales(view);
                                 break;
+                            case 1:
+                                Intent i = new Intent(ZonasVentanas.this, VentanasPasillo.class);
+                                startActivity(i);
+                                break;
                         }
                     }
                 })

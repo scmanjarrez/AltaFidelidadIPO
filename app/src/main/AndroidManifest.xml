@@ -81,6 +81,10 @@
         <activity
             android:name=".RiegoJLateral"
             android:label="@string/jLateral" />
+
+        <activity
+            android:name=".VentanasPasillo"
+            android:label="@string/pasillo" />
     </application>
 
 </manifest>
