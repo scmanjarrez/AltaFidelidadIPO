@@ -29,22 +29,20 @@ public class ZonasVentanas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+        setContentView(R.layout.activity_recycler_view_zona_fuera);
 
         Bundle bundle = getIntent().getExtras();
         int position = bundle.getInt("position");
 
         ArrayList<EntidadZonas> datos = new ArrayList<EntidadZonas>();
         datos.add(new EntidadZonas(R.drawable.icono_zonas_general, getString(R.string.general)));
-        datos.add(new EntidadZonas(R.drawable.icono_zona_pasillo, getString(R.string.pasillo)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_salon, getString(R.string.salon)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_cocina, getString(R.string.cocina)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_habitacion, getString(R.string.habitacion)));
         datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.bano)));
-        datos.add(new EntidadZonas(R.drawable.icono_zona_garaje, getString(R.string.garaje)));
 
 
-        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerView);
+        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerViewF);
         lmanager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         reciclador.setLayoutManager(lmanager);
 
@@ -52,7 +50,7 @@ public class ZonasVentanas extends AppCompatActivity {
         adaptador = new ZonasAdaptador(datos);
         reciclador.setAdapter(adaptador);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerView);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerViewF);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,21 +66,37 @@ public class ZonasVentanas extends AppCompatActivity {
                                 opcGenerales(view);
                                 break;
                             case 1:
-                                Intent i = new Intent(ZonasVentanas.this, VentanasPasillo.class);
+                                Intent i = new Intent(ZonasVentanas.this, VentanasSalon.class);
+                                i.putExtra("position", spinner.getSelectedItemPosition());
                                 startActivity(i);
+                                break;
+                            case 2:
+                                Intent j = new Intent(ZonasVentanas.this, VentanasCocina.class);
+                                j.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(j);
+                                break;
+                            case 3:
+                                Intent k = new Intent(ZonasVentanas.this, VentanasHabitacion.class);
+                                k.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(k);
+                                break;
+                            case 4:
+                                Intent l = new Intent(ZonasVentanas.this, VentanasBano.class);
+                                l.putExtra("position", spinner.getSelectedItemPosition());
+                                startActivity(l);
                                 break;
                         }
                     }
                 })
         );
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerView);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerViewF);
         setSupportActionBar(toolbar);
 
-        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerView);
+        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerViewF);
         titulo.setText(R.string.title_activity_ventanas);
 
-        spinner = (Spinner) findViewById(R.id.spinnerRecyclerView);
+        spinner = (Spinner) findViewById(R.id.spinnerRecyclerViewF);
 
         ArrayList<String> casas = new ArrayList<>();
         casas.add("Sierra");
@@ -92,7 +106,9 @@ public class ZonasVentanas extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(ZonasVentanas.this, R.layout.spinner_item, casas);
         spinner.setAdapter(adapter);
         spinner.setSelection(position);
-
+        if(getIntent().hasExtra("newPosition")){
+            spinner.setSelection(getIntent().getExtras().getInt("newPosition"));
+        }
     }
 
     @Override
@@ -116,12 +132,20 @@ public class ZonasVentanas extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getTitle().equals(getString(R.string.general_ventanas_on))) {
             functionOnVent(item.getItemId());
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.abrirVentanas();
         }else if (item.getTitle().equals(getString(R.string.general_ventanas_off))) {
             functionOffVent(item.getItemId());
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.cerrarVentanas();
         }else if (item.getTitle().equals(getString(R.string.general_persianas_on))) {
             functionOnPers(item.getItemId());
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.subirPersianas();
         }else if (item.getTitle().equals(getString(R.string.general_persianas_off))) {
             functionOffPers(item.getItemId());
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.bajarPersianas();
         }else{
             return false;
         }
@@ -152,5 +176,27 @@ public class ZonasVentanas extends AppCompatActivity {
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.opciones) {
+            Intent i = new Intent(this, Opciones.class);
+            i.putExtra("caller", "ZonasVentanas");
+            i.putExtra("position", spinner.getSelectedItemPosition());
+            startActivity(i);
+        }
+        if (id == R.id.acercade) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

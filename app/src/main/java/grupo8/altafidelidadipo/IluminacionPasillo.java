@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -27,12 +28,12 @@ public class IluminacionPasillo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+        setContentView(R.layout.activity_recycler_view_zona_dentro);
 
         Bundle bundle = getIntent().getExtras();
         int position = bundle.getInt("position");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerView);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerViewD);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,9 +44,9 @@ public class IluminacionPasillo extends AppCompatActivity {
         VariablesGlobales estado = VariablesGlobales.getInstance();
 
         ArrayList<EntidadLuces> datos = new ArrayList<EntidadLuces>();
-        datos.add(new EntidadLuces("Luz 1","swPasillo1", estado.isSwPasillo1()));
+        datos.add(new EntidadLuces("Luz","swPasillo1", estado.isSwPasillo1()));
 
-        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerView);
+        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerViewD);
         lmanager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         reciclador.setLayoutManager(lmanager);
         reciclador.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
@@ -53,13 +54,16 @@ public class IluminacionPasillo extends AppCompatActivity {
         adaptador = new LucesAdaptador(datos);
         reciclador.setAdapter(adaptador);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerView);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerViewD);
         setSupportActionBar(toolbar);
 
-        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerView);
+        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerViewD);
         titulo.setText(R.string.pasillo);
 
-        spinner = (Spinner) findViewById(R.id.spinnerRecyclerView);
+        TextView funcion = (TextView) findViewById(R.id.tvFuncionRecyclerViewD);
+        funcion.setText(R.string.title_activity_iluminacion);
+
+        spinner = (Spinner) findViewById(R.id.spinnerRecyclerViewD);
 
         ArrayList<String> casas = new ArrayList<>();
         casas.add("Sierra");
@@ -69,6 +73,9 @@ public class IluminacionPasillo extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(IluminacionPasillo.this, R.layout.spinner_item, casas);
         spinner.setAdapter(adapter);
         spinner.setSelection(position);
+        if(getIntent().hasExtra("newPosition")){
+            spinner.setSelection(getIntent().getExtras().getInt("newPosition"));
+        }
     }
 
     @Override
@@ -87,4 +94,24 @@ public class IluminacionPasillo extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.opciones) {
+            Intent i = new Intent(this, Opciones.class);
+            i.putExtra("caller", "IluminacionPasillo");
+            i.putExtra("position", spinner.getSelectedItemPosition());
+            startActivity(i);
+        }
+        if (id == R.id.acercade) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

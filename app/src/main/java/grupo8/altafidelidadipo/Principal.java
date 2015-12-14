@@ -32,6 +32,8 @@ public class Principal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(Principal.this, "En construcción...", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Principal.this, VisionGeneral.class);
+                startActivity(i);
             }
         });
 
@@ -52,18 +54,6 @@ public class Principal extends AppCompatActivity {
         if(getIntent().hasExtra("newPosition")){
             spinner.setSelection(getIntent().getExtras().getInt("newPosition"));
         }
-
-/****************** Como en principio es un spinner de relleno, no tiene implementada ninguna función ******************/
-//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parentView) {
-//            }
-//
-//        });
 
         ImageButton riego = (ImageButton) findViewById(R.id.btRiego);
         registerForContextMenu(riego);
@@ -92,6 +82,12 @@ public class Principal extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.opciones) {
+            Intent i = new Intent(Principal.this, Opciones.class);
+            i.putExtra("caller", "Principal");
+            i.putExtra("position", spinner.getSelectedItemPosition());
+            startActivity(i);
+        }
+        if (id == R.id.acercade) {
             return true;
         }
 
@@ -149,12 +145,20 @@ public class Principal extends AppCompatActivity {
             g.desactivarTermostatos();
         }else if (item.getTitle().equals(getString(R.string.general_ventanas_on))) {
             Toast.makeText(this, "Se han abierto todas las ventanas", Toast.LENGTH_SHORT).show();
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.abrirVentanas();
         }else if (item.getTitle().equals(getString(R.string.general_ventanas_off))) {
             Toast.makeText(this, "Se han cerrado todas las ventanas", Toast.LENGTH_SHORT).show();
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.cerrarVentanas();
         }else if (item.getTitle().equals(getString(R.string.general_persianas_on))) {
             Toast.makeText(this, "Se han subido todas las persianas", Toast.LENGTH_SHORT).show();
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.subirPersianas();
         }else if (item.getTitle().equals(getString(R.string.general_persianas_off))) {
             Toast.makeText(this, "Se han bajado todas las persianas", Toast.LENGTH_SHORT).show();
+            VariablesGlobales g = VariablesGlobales.getInstance();
+            g.bajarPersianas();
         }else if (item.getTitle().equals(getString(R.string.general_iluminacion_on))) {
             Toast.makeText(this, "Se han encendido todas las luces", Toast.LENGTH_SHORT).show();
             VariablesGlobales g = VariablesGlobales.getInstance();
@@ -191,18 +195,6 @@ public class Principal extends AppCompatActivity {
         Intent i = new Intent(Principal.this, ZonasIluminacion.class);
         i.putExtra("position", spinner.getSelectedItemPosition());
         startActivity(i);
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedState) {
-        super.onRestoreInstanceState(savedState);
     }
 
 }

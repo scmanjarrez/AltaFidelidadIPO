@@ -7,6 +7,7 @@
         <item name="android:textColorPrimary">@color/white</item><!--Color del titulo de la AppBar-->
         <item name="android:textColorSecondary">@color/white</item><!--Color del overflow button-->
         <item name="android:textColor">@color/black</item> <!--Color del texto del menu overflow-->
+        <item name="android:windowBackground">@color/fondo</item>
     </style>
 
     <style name="checkbox">

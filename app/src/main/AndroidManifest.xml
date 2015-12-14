@@ -78,13 +78,33 @@
         <activity
             android:name=".RiegoJTrasero"
             android:label="@string/jTrasero" />
+
         <activity
             android:name=".RiegoJLateral"
             android:label="@string/jLateral" />
 
         <activity
-            android:name=".VentanasPasillo"
-            android:label="@string/pasillo" />
+            android:name=".VentanasSalon"
+            android:label="@string/salon" />
+
+        <activity
+            android:name=".VentanasCocina"
+            android:label="@string/cocina" />
+
+        <activity
+            android:name=".VentanasHabitacion"
+            android:label="@string/habitacion" />
+
+        <activity
+            android:name=".VentanasBano"
+            android:label="@string/bano" />
+
+        <activity
+            android:name=".Opciones"
+            android:label="@string/title_activity_opciones" />
+        <activity
+            android:name=".VisionGeneral"
+            android:label="@string/vision_general" />
     </application>
 
 </manifest>

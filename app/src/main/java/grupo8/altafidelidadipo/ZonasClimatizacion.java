@@ -28,7 +28,7 @@ public class ZonasClimatizacion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+        setContentView(R.layout.activity_recycler_view_zona_fuera);
 
         Bundle bundle = getIntent().getExtras();
         int position = bundle.getInt("position");
@@ -41,7 +41,7 @@ public class ZonasClimatizacion extends AppCompatActivity {
         datos.add(new EntidadZonas(R.drawable.icono_zona_bano, getString(R.string.bano)));
 
 
-        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerView);
+        reciclador = (RecyclerView) findViewById(R.id.recicladorRecyclerViewF);
         lmanager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         reciclador.setLayoutManager(lmanager);
 
@@ -49,7 +49,7 @@ public class ZonasClimatizacion extends AppCompatActivity {
         adaptador = new ZonasAdaptador(datos);
         reciclador.setAdapter(adaptador);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerView);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRecyclerViewF);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,13 +89,13 @@ public class ZonasClimatizacion extends AppCompatActivity {
                 })
         );
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerView);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRecyclerViewF);
         setSupportActionBar(toolbar);
 
-        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerView);
+        TextView titulo = (TextView) findViewById(R.id.tituloRecyclerViewF);
         titulo.setText(R.string.title_activity_climatizacion);
 
-        spinner = (Spinner) findViewById(R.id.spinnerRecyclerView);
+        spinner = (Spinner) findViewById(R.id.spinnerRecyclerViewF);
 
         ArrayList<String> casas = new ArrayList<>();
         casas.add("Sierra");
@@ -160,5 +160,27 @@ public class ZonasClimatizacion extends AppCompatActivity {
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.opciones) {
+            Intent i = new Intent(this, Opciones.class);
+            i.putExtra("caller", "ZonasClimatizacion");
+            i.putExtra("position", spinner.getSelectedItemPosition());
+            startActivity(i);
+        }
+        if (id == R.id.acercade) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -4,8 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
-    <color name="colorFAB">#f4363f</color>
+    <color name="colorFAB">@android:color/holo_orange_light</color>
     <color name="black_65">#A6000000</color>
     <color name="black">#FF000000</color>
     <color name="azulClaro">#9fa8da</color>
+    <color name="fondo">#e8eaf6</color>
+    <color name="fondo2">#5c6bc0</color>
 </resources>

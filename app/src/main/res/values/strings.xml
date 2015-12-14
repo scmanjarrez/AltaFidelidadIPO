@@ -20,6 +20,9 @@
     <string name="zonas">Zonas</string>
     <string name="jLateral">Jardín Lateral</string>
     <string name="jTrasero">Jardín Trasero</string>
+    <string name="jLateral2">J.Lateral</string>
+    <string name="jTrasero2">J.Trasero</string>
+
 
     <!--Strings de los menús-->
     <string name="title_activity_opciones">Opciones</string>
@@ -41,5 +44,6 @@
     <string name="temp_obj">Temperatura Deseada</string>
     <string name="temp_act">Temperatura Actual</string>
 
+    <string name="vision_general">Visión General</string>
 
 </resources>
