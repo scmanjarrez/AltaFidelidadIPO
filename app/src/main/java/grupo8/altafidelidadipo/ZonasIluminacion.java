@@ -57,7 +57,10 @@ public class ZonasIluminacion extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ZonasIluminacion.this, "En construcción...", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ZonasIluminacion.this, VisionGeneral.class);
+                i.putExtra("caller", "ZonasIluminacion");
+                i.putExtra("position", spinner.getSelectedItemPosition());
+                startActivity(i);
             }
         });
 
@@ -194,11 +197,12 @@ public class ZonasIluminacion extends AppCompatActivity {
             i.putExtra("position", spinner.getSelectedItemPosition());
             startActivity(i);
         }
-        if (id == R.id.acercade) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void backArrow(View v){
+        onBackPressed();
     }
 
 }

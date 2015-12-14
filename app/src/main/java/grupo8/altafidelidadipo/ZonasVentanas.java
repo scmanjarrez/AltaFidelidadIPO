@@ -54,7 +54,10 @@ public class ZonasVentanas extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ZonasVentanas.this, "En construcción...", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ZonasVentanas.this, VisionGeneral.class);
+                i.putExtra("caller", "ZonasVentanas");
+                i.putExtra("position", spinner.getSelectedItemPosition());
+                startActivity(i);
             }
         });
 
@@ -193,10 +196,11 @@ public class ZonasVentanas extends AppCompatActivity {
             i.putExtra("position", spinner.getSelectedItemPosition());
             startActivity(i);
         }
-        if (id == R.id.acercade) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void backArrow(View v){
+        onBackPressed();
     }
 }

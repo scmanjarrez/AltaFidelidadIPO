@@ -37,7 +37,10 @@ public class IluminacionPasillo extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(IluminacionPasillo.this, "En construcción...", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(IluminacionPasillo.this, VisionGeneral.class);
+                i.putExtra("caller", "IluminacionPasillo");
+                i.putExtra("position", spinner.getSelectedItemPosition());
+                startActivity(i);
             }
         });
 
@@ -108,10 +111,12 @@ public class IluminacionPasillo extends AppCompatActivity {
             i.putExtra("position", spinner.getSelectedItemPosition());
             startActivity(i);
         }
-        if (id == R.id.acercade) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void backArrow(View v){
+        onBackPressed();
+    }
+
 }

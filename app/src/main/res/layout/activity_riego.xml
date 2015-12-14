@@ -20,6 +20,18 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:id="@+id/iconoBackRiego"
+                    android:src="@drawable/ic_arrow_back"
+                    android:tint="@color/white"
+                    android:layout_centerVertical="true"
+                    android:scaleType="center"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="-17dp"
+                    android:onClick="backArrow"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -29,7 +41,8 @@
                     android:layout_centerVertical="true"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:layout_alignParentStart="true"/>
+                    android:layout_toEndOf="@id/iconoBackRiego"
+                    android:layout_marginStart="5dp"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

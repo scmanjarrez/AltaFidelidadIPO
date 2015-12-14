@@ -53,7 +53,10 @@ public class ZonasClimatizacion extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ZonasClimatizacion.this, "En construcción...", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ZonasClimatizacion.this, VisionGeneral.class);
+                i.putExtra("caller", "ZonasClimatizacion");
+                i.putExtra("position", spinner.getSelectedItemPosition());
+                startActivity(i);
             }
         });
 
@@ -162,6 +165,10 @@ public class ZonasClimatizacion extends AppCompatActivity {
         finish();
     }
 
+    public void backArrow(View v){
+        onBackPressed();
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -176,9 +183,6 @@ public class ZonasClimatizacion extends AppCompatActivity {
             i.putExtra("caller", "ZonasClimatizacion");
             i.putExtra("position", spinner.getSelectedItemPosition());
             startActivity(i);
-        }
-        if (id == R.id.acercade) {
-            return true;
         }
 
         return super.onOptionsItemSelected(item);
