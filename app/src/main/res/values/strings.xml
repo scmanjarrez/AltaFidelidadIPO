@@ -45,5 +45,18 @@
     <string name="temp_act">Temperatura Actual</string>
 
     <string name="vision_general">Visión General</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="fahrenheit">ºF</string>
+    <string name="disposicion">Disposición</string>
+    <string name="righttoleft">RTL</string>
+    <string name="idioma">Idioma</string>
+    <string name="ingles">Inglés</string>
+    <string name="mododaltonico">Modo Daltónico</string>
+    <string name="si">Sí</string>
+    <string name="tamanoletra">Tamaño Letra</string>
+    <string name="grande">Grande</string>
+    <string name="media">Media</string>
+    <string name="pequena">Pequeña</string>
+    <string name="queesrtl">RTL, dirección de texto de derecha a izquierda</string>
 
 </resources>
